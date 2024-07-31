@@ -2,3 +2,8 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
 }
+
+.heading {
+  margin: auto;
+  padding: 2%;
+}

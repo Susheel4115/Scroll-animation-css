@@ -1,16 +1,17 @@
 .scroll-container {
-  width: 50px;
-  height: 200px;
+  width: 75px;
+  height: 230px;
   overflow-y: scroll;
   margin: auto;
   text-align: center;
   box-sizing: border-box;
-  background-color: #000; /* Adjust the background color */
+  background-color: #000; /*Adjust the background color */
   color: #fff; /* Adjust the text color */
-  border-radius: 25px; /* Make it a pill shape */
+  border-radius: 20px; /* Make it a pill shape */
   position: relative;
   padding-top: 80px; /* Adjust this to center your text vertically */
   padding-bottom: 80px;
+  /* box-shadow: 4px 1px 2px 4px black; */
 }
 
 .scroll-item {
