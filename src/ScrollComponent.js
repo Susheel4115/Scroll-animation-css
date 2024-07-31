@@ -45,13 +45,16 @@ const ScrollComponent = () => {
 
   return (
     <div className="scroll-container" ref={containerRef}>
-      <div className="scroll-item">20°</div>
-      <div className="scroll-item">21°</div>
-      <div className="scroll-item">22°</div>
-      <div className="scroll-item">23°</div>
-      <div className="scroll-item">24°</div>
-      <div className="scroll-item">25°</div>
-      <div className="scroll-item">26°</div>
+      <div className="scroll-item">0°</div>
+      <div className="scroll-item">1°</div>
+      <div className="scroll-item">2°</div>
+      <div className="scroll-item">3°</div>
+      <div className="scroll-item">4°</div>
+      <div className="scroll-item">5°</div>
+      <div className="scroll-item">6°</div>
+      <div className="scroll-item">7°</div>
+      <div className="scroll-item">8°</div>
+      <div className="scroll-item">9°</div>
     </div>
   );
 };
