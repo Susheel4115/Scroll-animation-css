@@ -1,0 +1,40 @@
+.scroll-container {
+  width: 50px;
+  height: 200px;
+  overflow-y: scroll;
+  margin: auto;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #000; /* Adjust the background color */
+  color: #fff; /* Adjust the text color */
+  border-radius: 25px; /* Make it a pill shape */
+  position: relative;
+  padding-top: 80px; /* Adjust this to center your text vertically */
+  padding-bottom: 80px;
+}
+
+.scroll-item {
+  font-size: 18px; /* Adjust the font size */
+  padding: 20px 0; /* Adjust the padding */
+  opacity: 0.3; /* Default dimmed effect */
+  transition: opacity 0.2s ease; /* Smooth transition for opacity */
+}
+
+.scroll-item.highlighted {
+  opacity: 1; /* Fully visible when highlighted */
+  font-size: 22px; /* Optionally make the highlighted item larger */
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 0;
+  background: transparent; /* Hide the scrollbar */
+}
+
+.scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-container:hover {
+  overflow-y: auto;
+}
