@@ -3,13 +3,14 @@ import "./ScrollComponent.css";
 
 const ScrollComponent = () => {
   const containerRef = useRef(null);
-
+  console.log("inside the componen");
   useEffect(() => {
     const container = containerRef.current;
-
-    let debounceTimer;
+    console.log("inside useeffect");
 
     const handleScroll = () => {
+      let debounceTimer;
+      console.log("inside handlescroll");
       clearTimeout(debounceTimer);
 
       debounceTimer = setTimeout(() => {
