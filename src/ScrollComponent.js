@@ -7,22 +7,34 @@ const ScrollComponent = () => {
   useEffect(() => {
     const container = containerRef.current;
 
+    let debounceTimer;
+
     const handleScroll = () => {
-      const items = container.querySelectorAll(".scroll-item");
-      const containerCenter =
-        container.getBoundingClientRect().top + container.clientHeight / 2;
+      clearTimeout(debounceTimer);
 
-      items.forEach((item) => {
-        const itemCenter =
-          item.getBoundingClientRect().top + item.clientHeight / 2;
-        const distance = Math.abs(containerCenter - itemCenter);
+      debounceTimer = setTimeout(() => {
+        const items = container.querySelectorAll(".scroll-item");
+        const containerCenter =
+          container.getBoundingClientRect().top + container.clientHeight / 2;
 
-        if (distance < item.clientHeight / 2) {
-          item.classList.add("highlighted");
-        } else {
-          item.classList.remove("highlighted");
-        }
-      });
+        let closestItem = null;
+        let minDistance = Infinity;
+
+        items.forEach((item) => {
+          const itemCenter =
+            item.getBoundingClientRect().top + item.clientHeight / 2;
+          const distance = Math.abs(containerCenter - itemCenter);
+
+          if (distance < minDistance) {
+            closestItem = item;
+            minDistance = distance;
+          }
+        });
+
+        items.forEach((item) => {
+          item.classList.toggle("highlighted", item === closestItem);
+        });
+      }, 100); // Adjust the timeout value as needed
     };
 
     container.addEventListener("scroll", handleScroll);
@@ -33,17 +45,13 @@ const ScrollComponent = () => {
 
   return (
     <div className="scroll-container" ref={containerRef}>
-      <div className="scroll-item">0°</div>
-      <div className="scroll-item">1°</div>
-      <div className="scroll-item">2°</div>
-      <div className="scroll-item">3°</div>
-      <div className="scroll-item">4°</div>
-      <div className="scroll-item">5°</div>
-      <div className="scroll-item">6°</div>
-      <div className="scroll-item">7°</div>
-      <div className="scroll-item">8°</div>
-      <div className="scroll-item">9°</div>
-      <div className="scroll-item">10°</div>
+      <div className="scroll-item">20°</div>
+      <div className="scroll-item">21°</div>
+      <div className="scroll-item">22°</div>
+      <div className="scroll-item">23°</div>
+      <div className="scroll-item">24°</div>
+      <div className="scroll-item">25°</div>
+      <div className="scroll-item">26°</div>
     </div>
   );
 };

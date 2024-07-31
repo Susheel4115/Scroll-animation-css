@@ -17,7 +17,7 @@
   font-size: 18px; /* Adjust the font size */
   padding: 20px 0; /* Adjust the padding */
   opacity: 0.3; /* Default dimmed effect */
-  transition: opacity 0.2s ease; /* Smooth transition for opacity */
+  transition: opacity 0.2s ease, font-size 0.2s ease; /* Smooth transition for opacity and font size */
 }
 
 .scroll-item.highlighted {
